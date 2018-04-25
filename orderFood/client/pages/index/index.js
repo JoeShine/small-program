@@ -411,7 +411,12 @@ Page({
       url: '../myPackage/myPackage'
     })
   },
-  toMyAddress: function () {
+  toMyInfomation: function(){
+    wx.navigateTo({
+      url: '../myInformation/myInformation',
+    })
+  },
+ toMyAddress: function () {
     wx.navigateTo({
       url: '../address/address'
     })
