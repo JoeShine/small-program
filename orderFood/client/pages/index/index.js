@@ -103,7 +103,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({ 
-          height: (res.windowHeight*.57)+'px'
+          height: (res.windowHeight*1)+'px'
         })
       }
     });

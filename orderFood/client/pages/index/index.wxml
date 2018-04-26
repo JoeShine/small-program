@@ -20,6 +20,7 @@
       <input placeholder="搜索您喜欢的商品名称" placeholder-style="color:#999;padding-top: 5rpx;" />
       <image src="../../img/search.png" class="searchPic" catchtap="searchBtn"></image>
     </view>
+    <!--
     <view class='headtop'>
       <view class='icondish'>
         <image src='../../img/dish.png' lazy-load='true' />
@@ -38,7 +39,7 @@
         <text class='todaydish'>我要留言</text>
       </view>
     </view>
-
+  -->
     <!--
     <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" vertical="{{vertical}}">
       <block wx:for="{{newsarr}}" wx:key="">
@@ -50,8 +51,8 @@
         </swiper-item>
       </block>
     </swiper>
-    -->
     <view class='line'></view>
+    -->
   </view>
   <view class="P_title">
     <view class="{{orderOrBusiness=='order'?'P_order P_active':'P_order'}}" bindtap="tabChange" data-id="order">

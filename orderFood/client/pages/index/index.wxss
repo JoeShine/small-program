@@ -33,7 +33,7 @@ page {
   /*background: #ffe400;*/
   background: #ffffff;
   padding: 5rpx 10rpx 10rpx;
-  height: 20%;
+  height: 7%;
 }
 .page1 .one,.two {
   display: flex;
