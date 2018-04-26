@@ -22,17 +22,9 @@ Page({
     circular: true,
     
     menu: [
-      { id: 0, name: "热销" },
-      { id: 1, name: "新品" },
-      { id: 2, name: "下午茶" },
-      { id: 3, name: "滋味盖饭" },
-      { id: 4, name: "日式小食" },
-      { id: 5, name: "系列套餐" },
-      { id: 6, name: "特色炖汤" },
-      { id: 7, name: "下午茶" },
-      { id: 8, name: "日式小食" },
-      { id: 9, name: "滋味盖饭" },
-      { id: 10, name: "系列套餐" },
+      { id: 0, name: "早餐" },
+      { id: 1, name: "午餐" },
+      { id: 2, name: "晚餐"},
     ],
     arr2: [
       { id: 0, value: "香辣味" },

@@ -20,10 +20,25 @@
       <input placeholder="搜索您喜欢的商品名称" placeholder-style="color:#999;padding-top: 5rpx;" />
       <image src="../../img/search.png" class="searchPic" catchtap="searchBtn"></image>
     </view>
-    <view class='icondish'>
-      <image src='../../img/dish.png' lazy-load='true' />
-      <text class='todaydish'>今日菜谱</text>
+    <view class='headtop'>
+      <view class='icondish'>
+        <image src='../../img/dish.png' lazy-load='true' />
+        <text class='todaydish'>今日菜谱</text>
+      </view>
+      <view class='icondish'>
+        <image src='../../img/dish.png' lazy-load='true' />
+        <text class='todaydish'>热销菜品</text>
+      </view>
+      <view class='icondish'>
+        <image src='../../img/dish.png' lazy-load='true' />
+        <text class='todaydish'>打折菜品</text>
+      </view>
+      <view class='icondish'>
+        <image src='../../img/dish.png' lazy-load='true' />
+        <text class='todaydish'>我要留言</text>
+      </view>
     </view>
+    
 <!--
     <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" vertical="{{vertical}}">
       <block wx:for="{{newsarr}}" wx:key="">
@@ -83,6 +98,7 @@
 
   </view>
   <view class="P_business_P" wx:if="{{orderOrBusiness=='business'}}">
+  <!--
     <view class="S_top">
       <view class="S_title">
         商家信息
@@ -100,14 +116,53 @@
       <view class="iconfont icon-zhekou">折扣商品2.6折起（在线支付专享)</view>
       <view class="iconfont icon-zhekou">部分商品第二份半价</view>
     </view>
+  -->
+  <view class='C_top'>
+    <view class='calender'>
+    <!--
+      <image src='../../img/calender.jpg'></image>
+      -->
+    </view>
+    <view class='cdish'>
+      <scroll-view class="orderPage-sideBar3" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
+      <image src='../../img/calender.jpg'></image>
+      <block wx:for="{{arr3}}" wx:key="">
+        <view class="menuList menuList2" bindtap="toFoodDetail">
+          <image src="{{item.img}}"></image>
+          <view class="P_message">
+            <view>{{item.name}}</view>
+            <view class="P_small">{{item.message}}</view>
+            <view class="P_small" catchtap="donothing">{{item.message2}}</view>
+            <view class="P_bottom" catchtap="donothing">
+              <view>
+                <text class="price">¥{{item.price}} </text>
+                <text class="line_t">¥{{item.price}}</text>
+              </view>
+              <view catchtap="noTo">
+                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce2" wx:if="{{item.message3===''}}"></text>
+                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce" wx:if="{{item.message3!==''}}"></text>
+                <text> {{item.num}} </text>
+                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add2" wx:if="{{item.message3===''}}"></text>
+                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add" wx:if="{{item.message3!==''}}"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    </view>
+  </view>
   </view>
 
 
   <!--新用户专享红包  -->
+<!--
   <view class="newUserPag" bindtap="getPag" wx:if="{{page&&orderOrBusiness=='order'}}">
     <image src="../../img/newuserpag.png"></image>
   </view>
+  -->
   <!--打开红包  -->
+  <!--
   <view class="openPageBg" wx:if="{{open}}">
     <view class="openPage">
       <image src="../../img/pagbg.png" class="Picbg"></image>
@@ -125,6 +180,7 @@
       </view>
     </view>
   </view>
+  -->
 </view>
 
 <!--buycar.wxml-->

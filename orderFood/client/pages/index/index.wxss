@@ -72,22 +72,28 @@ page {
   right: 20rpx;
   top: 12rpx;
 }
+.headtop{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
 .icondish{
   position:relative;
   bottom: 40rpx;
-  
   display: flex;
   flex-direction: column;
   
 }
 .icondish image{
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   margin: 0 15rpx;
 }
 .icondish,.todaydish{
   color: #333;
-  font-family: "微软雅黑"
+  font-family: "微软雅黑";
+  font-size: 30rpx;
 }
 .line{
   position: relative;
@@ -132,6 +138,9 @@ page {
 .orderPage-sideBar2 {
   width: 580rpx;
 }
+.orderPage-sideBar3 {
+  width: 100%;
+}
 .menuList>view {
   padding: 40rpx 0;
   text-align: center;
@@ -144,6 +153,10 @@ page {
   display: flex;
   align-items: center;
   border-bottom: 2rpx solid #ddd;
+}
+.menuList image{
+  height: 120px;
+  width: 150px;
 }
 .menuList2>.P_message {
   text-align: left;
