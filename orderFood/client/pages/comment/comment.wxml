@@ -1,0 +1,41 @@
+<!--pages/comment/comment.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" data-otype="mycomment" bindtap="swichNav">我的留言</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-otype="addcomment" bindtap="swichNav">添加留言</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" data-otype="goodcomment" bindtap="swichNav">精选留言</view>
+</view>
+<view class="c_t60"></view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+  <!-- 我的留言 -->
+  <swiper-item>
+    <view class="shop" wx:for="{{commentList}}">
+      <view>序号：{{item.id +1}}</view>
+      <view>主题：{{item.title}}</view>
+      <view>意见：{{item.content}}</view>
+      <view>回复内容：{{item.reply}}</view>
+    </view>
+  </swiper-item>
+  <!-- 添加留言 -->
+  <swiper-item>
+    <view class='container'>
+      <view class='classname'>
+        <form bindsubmit="commentsubmit">
+          <view class='xing'>主题:
+            <input placeholder-class='placeholder' placeholder='请输入留言主题' class="in" name='tel' value="{{userinfo.tel}}" />
+          </view>
+          <textarea class='xing1'>内容:</textarea>
+          <button type="" form-type="submit" hover-class='button-hover' class='su'>提交</button>
+        </form>
+      </view>
+    </view>
+  </swiper-item>
+  <!-- 精选留言 -->
+  <swiper-item>
+    <view class="shop" wx:for="{{commentList0}}">
+      <view>序号：{{item.id +1}}</view>
+      <view>主题：{{item.title}}</view>
+      <view>意见：{{item.content}}</view>
+      <view>回复内容：{{item.reply}}</view>
+    </view>
+  </swiper-item>
+</swiper>

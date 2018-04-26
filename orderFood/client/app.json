@@ -15,7 +15,8 @@
     "pages/evaluate/evaluate",
     "pages/allEvaluate/allEvaluate",
     "pages/myPackage/myPackage",
-    "pages/myInformation/myInformation"
+    "pages/myInformation/myInformation",
+    "pages/comment/comment"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -619,6 +619,12 @@ page {
 .page4 .meMap {
   border-top: 2rpx #f2f2f2 solid;
 }
+.page4 .meInfo{
+  border-top: 2rpx #f2f2f2 solid;
+}
+.page4 .mecomment{
+  border-top: 2rpx #f2f2f2 solid;
+}
 .page4 .mePag .meMore {
   font-size: 44rpx;
 }

@@ -1,0 +1,101 @@
+/* pages/comment/comment.wxss */
+page{
+  background: #f2f2f2
+}
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 1px solid #eee;  
+    text-align: center;  
+    line-height: 80rpx;
+    background: #fff;  
+    position: fixed;
+    top: 0;  
+    z-index: -999;
+  }
+  .swiper-tab-list{  
+  font-size: 12px;  
+  display: inline-block; 
+  width: 33%;  
+  color: #666;  
+  }  
+.on{ 
+  color: #dd2727;  
+  border-bottom: 5rpx solid #dd2727;
+  }  
+.swiper-box{ 
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+  }  
+.shop{
+    background: #fff;
+    padding: 4%;
+    margin: 10px;
+    border-radius: 10rpx;
+}
+.c_t60{
+    clear: both;
+    height: 1px;
+    padding-top: 48px;
+}
+.container{
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "微软雅黑";
+  
+}
+.classname{
+  background: #f2f2f2;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 150rpx;
+}
+.xing {
+  font-family: "微软雅黑", "黑体";
+  height: 54rpx;
+  width: 579rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+  margin-top: 38rpx;
+  padding-left: 30rpx;
+}
+.xing1{
+  font-family: "微软雅黑", "黑体";
+  height: 400rpx;
+  width: 579rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 54rpx;
+  font-size: 28rpx;
+  padding: 10rpx;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+}
+.in {
+  float: right;
+  width: 75%;
+  padding-top: 0rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+.su {
+  width: 84%;
+  color: #000;
+  height: 69rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  font-family: "微软雅黑", "黑体";
+  top: 50rpx;
+  background: #ffe400;
+}

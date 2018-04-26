@@ -298,14 +298,14 @@
       </view>
     </view>
     <view class="padding"></view>
-   </view>
   </view>
-  <!--me.wxml  -->
-  <view class="container page4" wx:if="{{pageType==4}}">
-    <view class="mePic">
-      <image src="{{img}}"></image>
-    </view>
-    <!--
+</view>
+<!--me.wxml  -->
+<view class="container page4" wx:if="{{pageType==4}}">
+  <view class="mePic">
+    <image src="{{img}}"></image>
+  </view>
+  <!--
   <view class="mePag" bindtap="toMyPackage">
     <view>
       <text class="iconfont icon-pag2">  我的红包</text>
@@ -313,15 +313,21 @@
     </view>
   </view>
 -->
-    <view>
-      <view class='mePag' bindtap='toMyInfomation'>
-        <view>
-          <text class="iconfont icon-pag"> 我的资料</text>
-          <text class="iconfont icon-more"></text>
-        </view>
+  <view>
+    <view class='mePag' bindtap='toMyInfomation'>
+      <view class='meInfo'>
+        <text class="iconfont icon-pag"> 我的资料</text>
+        <text class="iconfont icon-more"></text>
       </view>
     </view>
-    <!--
+    <view class='mePag' bindtap='toMyComment'>
+      <view class='mecomment'>
+        <text class="iconfont icon-pag"> 留言板</text>
+        <text class="iconfont icon-more"></text>
+      </view>
+    </view>
+  </view>
+  <!--
     <view class="mePag" bindtap="toMyAddress">
       <view class="meMap">
         <text class="iconfont icon-map">  我的地址</text>
@@ -329,39 +335,39 @@
       </view>
     </view>
     -->
-    <view class="calling" bindtap="calling">
-      订餐电话：
-      <text class="phoneColor">15103408807</text>
-    </view>
+  <view class="calling" bindtap="calling">
+    订餐电话：
+    <text class="phoneColor">15103408807</text>
   </view>
-  <view class="bottomfixed">
-    <view bindtap="chooseType" data-id="1">
-      <image src="../../img/icon1.png" wx:if="{{pageType!=1&&!restaurant}}"></image>
-      <image src="../../img/icon1-active.png" wx:if="{{pageType==1&&!restaurant}}"></image>
-      <image src="../../img/shop-active.png" wx:if="{{pageType==1&&restaurant}}"></image>
-      <image src="../../img/shop.png" wx:if="{{pageType!=1&&restaurant}}"></image>
-      <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{restaurant}}">点餐</view>
-      <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{!restaurant}}">点餐</view>
-    </view>
-    <view bindtap="chooseType" data-id="2">
-      <image src="../../img/icon2.png" wx:if="{{pageType!=2}}"></image>
-      <image src="../../img/icon2-active.png" wx:if="{{pageType==2}}"></image>
-      <view class="{{pageType==2?'fixedtext activecolor':'fixedtext'}}">购物车</view>
-    </view>
-    <view bindtap="chooseType" data-id="3">
-      <image src="../../img/icon3.png" wx:if="{{pageType!=3}}"></image>
-      <image src="../../img/icon3-active.png" wx:if="{{pageType==3}}"></image>
-      <view class="{{pageType==3?'fixedtext activecolor':'fixedtext'}}">订单</view>
-    </view>
-    <view bindtap="chooseType" data-id="4">
-      <image src="../../img/icon4.png" wx:if="{{pageType!=4}}"></image>
-      <image src="../../img/icon4-active.png" wx:if="{{pageType==4}}"></image>
-      <view class="{{pageType==4?'fixedtext activecolor':'fixedtext'}}">我的</view>
-    </view>
+</view>
+<view class="bottomfixed">
+  <view bindtap="chooseType" data-id="1">
+    <image src="../../img/icon1.png" wx:if="{{pageType!=1&&!restaurant}}"></image>
+    <image src="../../img/icon1-active.png" wx:if="{{pageType==1&&!restaurant}}"></image>
+    <image src="../../img/shop-active.png" wx:if="{{pageType==1&&restaurant}}"></image>
+    <image src="../../img/shop.png" wx:if="{{pageType!=1&&restaurant}}"></image>
+    <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{restaurant}}">点餐</view>
+    <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{!restaurant}}">点餐</view>
   </view>
+  <view bindtap="chooseType" data-id="2">
+    <image src="../../img/icon2.png" wx:if="{{pageType!=2}}"></image>
+    <image src="../../img/icon2-active.png" wx:if="{{pageType==2}}"></image>
+    <view class="{{pageType==2?'fixedtext activecolor':'fixedtext'}}">购物车</view>
+  </view>
+  <view bindtap="chooseType" data-id="3">
+    <image src="../../img/icon3.png" wx:if="{{pageType!=3}}"></image>
+    <image src="../../img/icon3-active.png" wx:if="{{pageType==3}}"></image>
+    <view class="{{pageType==3?'fixedtext activecolor':'fixedtext'}}">订单</view>
+  </view>
+  <view bindtap="chooseType" data-id="4">
+    <image src="../../img/icon4.png" wx:if="{{pageType!=4}}"></image>
+    <image src="../../img/icon4-active.png" wx:if="{{pageType==4}}"></image>
+    <view class="{{pageType==4?'fixedtext activecolor':'fixedtext'}}">我的</view>
+  </view>
+</view>
 
-  <!--规格选择  -->
-  <!--
+<!--规格选择  -->
+<!--
 <view class="Block" wx:if="{{block}}">
   <view class="total">
     <view class="title">

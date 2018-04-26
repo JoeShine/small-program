@@ -459,6 +459,11 @@ Page({
       url: '../myInformation/myInformation',
     })
   },
+  toMyComment: function(){
+    wx.navigateTo({
+      url: '../comment/comment',
+    })
+  },
  toMyAddress: function () {
     wx.navigateTo({
       url: '../address/address'
