@@ -128,5 +128,11 @@ Page({
     wx.navigateTo({
       url: '../evaluate/evaluate',
     })
-  }
+  },
+  cancelorder: function () {
+    wx.showModal({
+      title: '不允许取消！',
+      content: '只能取消当天预订的订单',
+    })
+  },
 })

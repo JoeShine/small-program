@@ -286,7 +286,7 @@
           <view>
             参考付款：
             <text class="price">40元</text>
-            <button style='width:200rpx;height:70rpx;font-size:34rpx'>删除</button>
+            <button style='width:200rpx;height:70rpx;font-size:34rpx' bindtap='orderdelete'>删除</button>
           </view>
           <!--
           <view>

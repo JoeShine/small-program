@@ -34,7 +34,7 @@
     <view class="bot" wx:if="{{orderStatus==0 }}">
     -->
     <view class="bot" wx:if="{{orderStatus==0 || orderStatus==1 || orderStatus==2}}">
-      <view bindtap="modalinput" bindtap=""  class="apply">取消订单</view>
+      <view bindtap="modalinput" bindtap="cancelorder"  class="apply">取消订单</view>
       <!--
       <view class="apply" bindtap="apply">去支付（还剩10分55秒）</view>
       -->

@@ -255,6 +255,17 @@ Page({
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
     arr3[i].num = parseInt(arr3[i].num) + 1;
+    if (arr3[i].num==4){
+      wx.showModal({
+        title: '不满足订餐条件!!!',
+        content: '只能提前一天预订，请选择正确的订餐日期',
+      })
+    } else if (arr3[i].num == 6){
+      wx.showModal({
+        title: '不满足订餐条件!!!',
+        content: '每人每天最多预订一次午餐和晚餐',
+      })
+    }
     this.setData({
       arr3: arr3
     })
@@ -269,6 +280,12 @@ Page({
     })
   },
   */
+  orderdelete: function(){
+    wx.showModal({
+      title: '不允许！',
+      content: '只有已完成的订单才能删除',
+    })
+  },
   close: function () {
     this.setData({
       block: false
