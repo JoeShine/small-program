@@ -12,6 +12,7 @@
 	},
 	"appid": "wxf122079ecafdab4a",
 	"projectname": "orderFood",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,

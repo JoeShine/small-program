@@ -30,8 +30,9 @@ page {
   overflow: hidden;
 }
 .page1 .head {
-  background: #ffe400;
-  padding: 40rpx 40rpx 20rpx;
+  /*background: #ffe400;*/
+  background: #ffffff;
+  padding: 5rpx 10rpx 10rpx;
   height: 20%;
 }
 .page1 .one,.two {
@@ -51,10 +52,11 @@ page {
   overflow: hidden;
 }
 .P_input {
-  position: relative;
+  position:relative;
+  bottom:20rpx;
 }
 .P_input input {
-  background: white;
+  background: #f2f2f2;
   border-radius: 40rpx;  
   width: 90%;
   padding: 10rpx 0;
@@ -70,12 +72,37 @@ page {
   right: 20rpx;
   top: 12rpx;
 }
+.icondish{
+  position:relative;
+  bottom: 40rpx;
+  
+  display: flex;
+  flex-direction: column;
+  
+}
+.icondish image{
+  width: 40px;
+  height: 40px;
+  margin: 0 15rpx;
+}
+.icondish,.todaydish{
+  color: #333;
+  font-family: "微软雅黑"
+}
+.line{
+  position: relative;
+  bottom: 23rpx;
+  height: 3rpx;
+  width: 100%;
+  background: #f2f2f2;
+}
 .swiper-item,.swiperList,swiper  {
   height: 60rpx;
 }
 .icon-news {
   color: #ff5400;
 }
+
 .P_title {
   display: flex; 
   padding: 0 10%;
