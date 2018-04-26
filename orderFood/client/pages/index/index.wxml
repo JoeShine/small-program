@@ -321,12 +321,14 @@
         </view>
       </view>
     </view>
+    <!--
     <view class="mePag" bindtap="toMyAddress">
       <view class="meMap">
         <text class="iconfont icon-map">  我的地址</text>
         <text class="iconfont icon-more"></text>
       </view>
     </view>
+    -->
     <view class="calling" bindtap="calling">
       订餐电话：
       <text class="phoneColor">15103408807</text>
