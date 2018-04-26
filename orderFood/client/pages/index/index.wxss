@@ -154,10 +154,33 @@ page {
   align-items: center;
   border-bottom: 2rpx solid #ddd;
 }
-.menuList image{
+/*菜谱中的排版*/
+.menuList3>view {
+  padding: 40rpx 0;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2rpx solid #ddd;
+  width: 400rpx;
+  height: 150rpx;
+}
+.menuList4 {
+  background: white;
+  padding: 30rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #ddd;
+}
+.menuList3 image{
   height: 120px;
   width: 150px;
 }
+.menuList3>.P_message {
+  text-align: left;
+  margin-left: 20rpx;
+  padding: 0;
+  border: 0;
+}
+
 .menuList2>.P_message {
   text-align: left;
   margin-left: 20rpx;

@@ -26,38 +26,47 @@ Page({
       { id: 1, name: "午餐" },
       { id: 2, name: "晚餐"},
     ],
+    /*
     arr2: [
       { id: 0, value: "香辣味" },
       { id: 1, value: "盐焗味" },
       { id: 2, value: "蒜香味" },
       { id: 3, value: "姜葱味" },
     ],
+    */
 
     height: 0,
     orderType: 0,  //点菜类型
     restaurant: false,  //餐厅点菜
     map_address: '',
     buycar_num: 0,
-    block: false,  //选规格
-    foodtype: 0,  //选规格种类
+    //block: false,  //选规格
+    //foodtype: 0,  //选规格种类
     bindId: 0,
 
     // buycar
     totalMoney: 0,
     chooseAll: false,
     arr: [
-      { id: 0, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "3", price: "51.21", selected: false },
-      { id: 1, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "3", price: "61", selected: false },
-      { id: 2, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "3", price: "71", selected: false },
-      { id: 3, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "3", price: "81", selected: false },
-      { id: 4, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "3", price: "81", selected: false }
+      { id: 0, img: "../../img/food2.jpg", name: "9元盖饭", num: "1", price: "9.00", selected: false },
+      { id: 1, img: "../../img/food2.jpg", name: "鸡腿", num: "2", price: "6.00", selected: false },
+      { id: 2, img: "../../img/food2.jpg", name: "猪肘子", num: "3", price: "25", selected: false }
     ],
     arr3: [
-      { id: 0, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "0", price: "51", message: "配米饭一份哦", message2: "月售330｜好评率100%", message3: [{ id: 0, value: "香辣味" }, { id: 1, value: "盐焗味" }, { id: 2, value: "蒜香味" }, { id: 3, value: "姜葱味" },] },
-      { id: 1, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "0", price: "51", message: "配米饭一份哦", message2: "月售330｜好评率100%", message3: '' },
-      { id: 2, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "0", price: "51", message: "配米饭一份哦", message2: "月售330｜好评率100%", message3: [{ id: 0, value: "香辣味2" }, { id: 1, value: "盐焗味2" }, { id: 2, value: "蒜香味2" }, { id: 3, value: "姜葱味2" },] },
-      { id: 3, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "0", price: "51", message: "配米饭一份哦", message2: "月售330｜好评率100%", message3: [{ id: 0, value: "香辣味3" }, { id: 1, value: "盐焗味3" }, { id: 2, value: "蒜香味3" }, { id: 3, value: "姜葱味3" },] },
-      { id: 4, img: "../../img/food2.jpg", name: "五花肉石锅拌饭", num: "0", price: "51", message: "配米饭一份哦", message2: "月售330｜好评率100%", message3: [{ id: 0, value: "香辣味4" }, { id: 1, value: "盐焗味4" }, { id: 2, value: "蒜香味4" }, { id: 3, value: "姜葱味4" },] },
+      { id: 0, img: "../../img/food2.jpg", name: "9元盖饭", num: "0", price: "51", message: "早餐", message2: "", message3: [{ id: 0, value: "香辣味" }, { id: 1, value: "盐焗味" }, { id: 2, value: "蒜香味" }, { id: 3, value: "姜葱味" },] },
+      { id: 1, img: "../../img/food2.jpg", name: "9元盖饭", num: "0", price: "51", message: "午餐", message2: "", message3: '' },
+      { id: 2, img: "../../img/food2.jpg", name: "9元盖饭", num: "0", price: "51", message: "午餐", message2: "", message3: [{ id: 0, value: "香辣味2" }, { id: 1, value: "盐焗味2" }, { id: 2, value: "蒜香味2" }, { id: 3, value: "姜葱味2" },] },
+      { id: 3, img: "../../img/food2.jpg", name: "9元盖饭", num: "0", price: "51", message: "晚餐", message2: "", message3: [{ id: 0, value: "香辣味3" }, { id: 1, value: "盐焗味3" }, { id: 2, value: "蒜香味3" }, { id: 3, value: "姜葱味3" },] },
+      { id: 4, img: "../../img/food2.jpg", name: "9元盖饭", num: "0", price: "51", message: "晚餐", message2: "", message3: [{ id: 0, value: "香辣味4" }, { id: 1, value: "盐焗味4" }, { id: 2, value: "蒜香味4" }, { id: 3, value: "姜葱味4" },] },
+    ],
+
+    //dish
+    arr4: [
+      { id: 0, img: "../../img/food2.jpg", name: "五花肉石锅拌饭:", num: "0", price: "51", message: "这是今日的石锅拌饭，你选择吃，也可以选择不吃，反正都给你做好了。" },
+      { id: 1, img: "../../img/food2.jpg", name: "五花肉石锅拌饭:", num: "0", price: "51", message: "这是今日的石锅拌饭，你选择吃，也可以选择不吃，反正都给你做好了。"},
+      { id: 2, img: "../../img/food2.jpg", name: "五花肉石锅拌饭:", num: "0", price: "51", message: "这是今日的石锅拌饭，你选择吃，也可以选择不吃，反正都给你做好了。"},
+      { id: 3, img: "../../img/food2.jpg", name: "五花肉石锅拌饭:", num: "0", price: "51", message: "这是今日的石锅拌饭，你选择吃，也可以选择不吃，反正都给你做好了。"},
+      { id: 4, img: "../../img/food2.jpg", name: "五花肉石锅拌饭:", num: "0", price: "51", message: "这是今日的石锅拌饭，你选择吃，也可以选择不吃，反正都给你做好了。"},
     ],
     // order
     orderOk: false,
@@ -191,6 +200,7 @@ Page({
       url: '../detail/detail',
     })
   },
+  /*
   reduce: function (e) {
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
@@ -208,6 +218,16 @@ Page({
       }      
     }
   },
+  */
+  reduce: function (e) {
+    var i = e.currentTarget.dataset.id;
+    var arr3 = this.data.arr3;
+    arr3[i].num = parseInt(arr3[i].num) - 1;
+    this.setData({
+          arr3: arr3
+        })
+  },
+  /*
   reduce2: function (e) {
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
@@ -218,6 +238,8 @@ Page({
       })
     }
   },
+  */
+  /*
   add: function (e) {
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
@@ -228,6 +250,16 @@ Page({
       bindId: i
     })
   },
+  */
+  add: function (e) {
+    var i = e.currentTarget.dataset.id;
+    var arr3 = this.data.arr3;
+    arr3[i].num = parseInt(arr3[i].num) + 1;
+    this.setData({
+      arr3: arr3
+    })
+  },
+  /*
   add2: function (e) {
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
@@ -236,6 +268,7 @@ Page({
       arr3: arr3
     })
   },
+  */
   close: function () {
     this.setData({
       block: false
@@ -252,8 +285,9 @@ Page({
     var arr3 = this.data.arr3;
     arr3[i].num = parseInt(arr3[i].num)+1
     this.setData({
-      block: false,
-      arr3: arr3
+      //block: false,
+      arr3: arr3,
+      bindId : i
     })
   },
   getAddress: function() {

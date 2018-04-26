@@ -38,8 +38,8 @@
         <text class='todaydish'>我要留言</text>
       </view>
     </view>
-    
-<!--
+
+    <!--
     <swiper autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}" vertical="{{vertical}}">
       <block wx:for="{{newsarr}}" wx:key="">
         <swiper-item>
@@ -69,7 +69,7 @@
         </view>
       </block>
     </scroll-view>
-
+    <!--
     <scroll-view class="orderPage-sideBar2" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
       <block wx:for="{{arr3}}" wx:key="">
         <view class="menuList menuList2" bindtap="toFoodDetail">
@@ -95,10 +95,49 @@
         </view>
       </block>
     </scroll-view>
-
+-->
+    <scroll-view class="orderPage-sideBar2" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
+      <block wx:for="{{arr3}}" wx:key="">
+        <view class="menuList menuList2" bindtap="toFoodDetail">
+          <image src="{{item.img}}"></image>
+          <view class="P_message">
+            <view>{{item.name}}</view>
+            <view class="P_small">{{item.message}}</view>
+            <view class="P_small" catchtap="donothing">{{item.message2}}</view>
+            <view class="P_bottom" catchtap="donothing">
+              <view>
+                <text class="price">¥{{item.price}} </text>
+                <!--
+                <text class="line_t">¥{{item.price}}</text>
+                -->
+              </view>
+              <view catchtap="noTo">
+                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce"></text>
+                <text> {{item.num}} </text>
+                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
   </view>
+
+  <!--菜谱日历-->
   <view class="P_business_P" wx:if="{{orderOrBusiness=='business'}}">
-  <!--
+    <scroll-view class="orderPage-sideBar3" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
+      <image src='../../img/calender.jpg' style='width:100%'></image>
+      <block wx:for="{{arr4}}" wx:key="">
+        <view class="menuList3 menuList4">
+          <image src="{{item.img}}"></image>
+          <view class="P_message">
+            <view>{{item.name}}</view>
+            <view class="P_small">{{item.message}}</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <!--
     <view class="S_top">
       <view class="S_title">
         商家信息
@@ -117,46 +156,11 @@
       <view class="iconfont icon-zhekou">部分商品第二份半价</view>
     </view>
   -->
-  <view class='C_top'>
-    <view class='calender'>
-    <!--
-      <image src='../../img/calender.jpg'></image>
-      -->
-    </view>
-    <view class='cdish'>
-      <scroll-view class="orderPage-sideBar3" bindscrolltolower="lower" scroll-y="true" style="height:{{height}};overflow-y:scroll">
-      <image src='../../img/calender.jpg'></image>
-      <block wx:for="{{arr3}}" wx:key="">
-        <view class="menuList menuList2" bindtap="toFoodDetail">
-          <image src="{{item.img}}"></image>
-          <view class="P_message">
-            <view>{{item.name}}</view>
-            <view class="P_small">{{item.message}}</view>
-            <view class="P_small" catchtap="donothing">{{item.message2}}</view>
-            <view class="P_bottom" catchtap="donothing">
-              <view>
-                <text class="price">¥{{item.price}} </text>
-                <text class="line_t">¥{{item.price}}</text>
-              </view>
-              <view catchtap="noTo">
-                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce2" wx:if="{{item.message3===''}}"></text>
-                <text class="iconfont icon-reduce" data-id="{{index}}" bindtap="reduce" wx:if="{{item.message3!==''}}"></text>
-                <text> {{item.num}} </text>
-                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add2" wx:if="{{item.message3===''}}"></text>
-                <text class="iconfont icon-add" data-id="{{index}}" bindtap="add" wx:if="{{item.message3!==''}}"></text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </block>
-    </scroll-view>
-    </view>
-  </view>
   </view>
 
 
   <!--新用户专享红包  -->
-<!--
+  <!--
   <view class="newUserPag" bindtap="getPag" wx:if="{{page&&orderOrBusiness=='order'}}">
     <image src="../../img/newuserpag.png"></image>
   </view>
@@ -194,7 +198,9 @@
         </view>
         <view class="totalMoney">
           <view class="price">合计：{{totalMoney}}元</view>
+          <!--
           <view class="otherMoney">另需5元配送费</view>
+          -->
         </view>
       </view>
       <view class="toPay" bindtap="toSubmit">
@@ -227,175 +233,133 @@
   <view class="allOrder">
     <view>
       <view class="allTitle">
-        <text>外卖订单</text>
+        <text>早餐订单</text>
         <text class="iconfont icon-more" bindtap="toDetail">订单已完成</text>
       </view>
       <view class="allMessage">
         <view class="allType">
-          <text class="order_name">肥牛饭</text>
+          <text class="order_name">9元盖饭</text>
           <text>X1</text>
-          <text class="price">¥12</text>
+          <text class="price">¥9</text>
         </view>
         <view class="allType">
-          <text class="order_name">塔塔酱鲜虾米汉堡</text>
+          <text class="order_name">鸡腿</text>
           <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allType">
-          <text class="order_name">mini鲷鱼烧</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
+          <text class="price">¥6</text>
         </view>
         <view class="allLast">
           <view>
-            实付：
-            <text class="price">100元</text>
+            参考付款：
+            <text class="price">15元</text>
+            <button style='width:200rpx;height:70rpx;font-size:34rpx'>删除</button>
           </view>
+          <!--
           <view>
             <navigator url="url" hover-class="navigator-hover">再来一单</navigator>
             <navigator url="../evaluate/evaluate" hover-class="navigator-hover" class="bg_y">评价</navigator>
           </view>
+          -->
         </view>
       </view>
-    </view>
-    <view>
       <view class="allTitle">
-        <text>外卖订单</text>
-        <text class="iconfont icon-more" bindtap="toDetail">商家已接单</text>
+        <text>午餐订单</text>
+        <text class="iconfont icon-more" bindtap="toDetail">订单未完成</text>
       </view>
       <view class="allMessage">
-        <view class="allType">
-          <text class="order_name">肥牛饭</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allType">
-          <text class="order_name">塔塔酱鲜虾米汉堡</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allType">
-          <text class="order_name">mini鲷鱼烧</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allLast">
-          <view>
-            实付：
-            <text class="price">100元</text>
-          </view>
-          <view>
-            <navigator url="url" hover-class="navigator-hover">再来一单</navigator>
-            <navigator url="url" hover-class="navigator-hover" bindtap="orderOk" class="bg_y">确认收货</navigator>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view>
-      <view class="allTitle">
-        <text>店内订单</text>
-        <text class="iconfont icon-more" bindtap="toDetail">订单已完成</text>
-      </view>
-      <view class="allMessage">
-        <view class="allType">
-          <text class="order_name">肥牛饭</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allType">
-          <text class="order_name">塔塔酱鲜虾米汉堡</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allType">
-          <text class="order_name">mini鲷鱼烧</text>
-          <text>X1</text>
-          <text class="price">¥12</text>
-        </view>
-        <view class="allLast">
-          <view>
-            实付：
-            <text class="price">100元</text>
-          </view>
-          <view>
-            <navigator url="url" hover-class="navigator-hover">再来一单</navigator>
-            <navigator url="../evaluate/evaluate" hover-class="navigator-hover" class="bg_y">评价</navigator>
-          </view>
-        </view>
-      </view>
-    </view>
 
-  </view>
-  <!--确认收货  -->
-  <view class="orderOk" wx:if="{{orderOk==true}}">
-    <view class="okMessage">
-      <view class="tip">提示</view>
-      <view class="shouhuo">是否确认收货？</view>
-      <view class="yesorno">
-        <view class="okCancel" bindtap="okCancel">否</view>
-        <view class="okOk" bindtap="okOk">是</view>
+        <view class="allType">
+          <text class="order_name">9元盖饭</text>
+          <text>X1</text>
+          <text class="price">¥9</text>
+        </view>
+        <view class="allType">
+          <text class="order_name">鸡腿</text>
+          <text>X1</text>
+          <text class="price">¥6</text>
+        </view>
+        <view class="allType">
+          <text class="order_name">猪肘子</text>
+          <text>X1</text>
+          <text class="price">¥25</text>
+        </view>
+        <view class="allLast">
+          <view>
+            参考付款：
+            <text class="price">40元</text>
+            <button style='width:200rpx;height:70rpx;font-size:34rpx'>删除</button>
+          </view>
+          <!--
+          <view>
+            <navigator url="url" hover-class="navigator-hover">再来一单</navigator>
+            <navigator url="../evaluate/evaluate" hover-class="navigator-hover" class="bg_y">评价</navigator>
+          </view>
+          -->
+        </view>
       </view>
     </view>
+    <view class="padding"></view>
+   </view>
   </view>
-  <view class="padding"></view>
-</view>
-<!--me.wxml  -->
-<view class="container page4" wx:if="{{pageType==4}}">
-  <view class="mePic">
-    <image src="{{img}}"></image>
-  </view>
+  <!--me.wxml  -->
+  <view class="container page4" wx:if="{{pageType==4}}">
+    <view class="mePic">
+      <image src="{{img}}"></image>
+    </view>
+    <!--
   <view class="mePag" bindtap="toMyPackage">
     <view>
       <text class="iconfont icon-pag2">  我的红包</text>
       <text class="iconfont icon-more"></text>
     </view>
   </view>
-  <view>
-    <view class='mePag' bindtap='toMyInfomation'>
-      <view>
-        <text class="iconfont icon-pag"> 我的资料</text>
+-->
+    <view>
+      <view class='mePag' bindtap='toMyInfomation'>
+        <view>
+          <text class="iconfont icon-pag"> 我的资料</text>
+          <text class="iconfont icon-more"></text>
+        </view>
+      </view>
+    </view>
+    <view class="mePag" bindtap="toMyAddress">
+      <view class="meMap">
+        <text class="iconfont icon-map">  我的地址</text>
         <text class="iconfont icon-more"></text>
       </view>
     </view>
-  </view>
-  <view class="mePag" bindtap="toMyAddress">
-    <view class="meMap">
-      <text class="iconfont icon-map">  我的地址</text>
-      <text class="iconfont icon-more"></text>
+    <view class="calling" bindtap="calling">
+      订餐电话：
+      <text class="phoneColor">15103408807</text>
     </view>
   </view>
-  <view class="calling" bindtap="calling">
-    订餐电话：
-    <text class="phoneColor">15103408807</text>
+  <view class="bottomfixed">
+    <view bindtap="chooseType" data-id="1">
+      <image src="../../img/icon1.png" wx:if="{{pageType!=1&&!restaurant}}"></image>
+      <image src="../../img/icon1-active.png" wx:if="{{pageType==1&&!restaurant}}"></image>
+      <image src="../../img/shop-active.png" wx:if="{{pageType==1&&restaurant}}"></image>
+      <image src="../../img/shop.png" wx:if="{{pageType!=1&&restaurant}}"></image>
+      <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{restaurant}}">点餐</view>
+      <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{!restaurant}}">点餐</view>
+    </view>
+    <view bindtap="chooseType" data-id="2">
+      <image src="../../img/icon2.png" wx:if="{{pageType!=2}}"></image>
+      <image src="../../img/icon2-active.png" wx:if="{{pageType==2}}"></image>
+      <view class="{{pageType==2?'fixedtext activecolor':'fixedtext'}}">购物车</view>
+    </view>
+    <view bindtap="chooseType" data-id="3">
+      <image src="../../img/icon3.png" wx:if="{{pageType!=3}}"></image>
+      <image src="../../img/icon3-active.png" wx:if="{{pageType==3}}"></image>
+      <view class="{{pageType==3?'fixedtext activecolor':'fixedtext'}}">订单</view>
+    </view>
+    <view bindtap="chooseType" data-id="4">
+      <image src="../../img/icon4.png" wx:if="{{pageType!=4}}"></image>
+      <image src="../../img/icon4-active.png" wx:if="{{pageType==4}}"></image>
+      <view class="{{pageType==4?'fixedtext activecolor':'fixedtext'}}">我的</view>
+    </view>
   </view>
-</view>
-<view class="bottomfixed">
-  <view bindtap="chooseType" data-id="1">
-    <image src="../../img/icon1.png" wx:if="{{pageType!=1&&!restaurant}}"></image>
-    <image src="../../img/icon1-active.png" wx:if="{{pageType==1&&!restaurant}}"></image>
-    <image src="../../img/shop-active.png" wx:if="{{pageType==1&&restaurant}}"></image>
-    <image src="../../img/shop.png" wx:if="{{pageType!=1&&restaurant}}"></image>
-    <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{restaurant}}">点餐</view>
-    <view class="{{pageType==1?'fixedtext activecolor':'fixedtext'}}" wx:if="{{!restaurant}}">点餐</view>
-  </view>
-  <view bindtap="chooseType" data-id="2">
-    <image src="../../img/icon2.png" wx:if="{{pageType!=2}}"></image>
-    <image src="../../img/icon2-active.png" wx:if="{{pageType==2}}"></image>
-    <view class="{{pageType==2?'fixedtext activecolor':'fixedtext'}}">购物车</view>
-  </view>
-  <view bindtap="chooseType" data-id="3">
-    <image src="../../img/icon3.png" wx:if="{{pageType!=3}}"></image>
-    <image src="../../img/icon3-active.png" wx:if="{{pageType==3}}"></image>
-    <view class="{{pageType==3?'fixedtext activecolor':'fixedtext'}}">订单</view>
-  </view>
-  <view bindtap="chooseType" data-id="4">
-    <image src="../../img/icon4.png" wx:if="{{pageType!=4}}"></image>
-    <image src="../../img/icon4-active.png" wx:if="{{pageType==4}}"></image>
-    <view class="{{pageType==4?'fixedtext activecolor':'fixedtext'}}">我的</view>
-  </view>
-</view>
 
-<!--规格选择  -->
+  <!--规格选择  -->
+  <!--
 <view class="Block" wx:if="{{block}}">
   <view class="total">
     <view class="title">
@@ -413,3 +377,4 @@
     </view>
   </view>
 </view>
+-->

@@ -4,9 +4,9 @@
 <view class="messageBlock">
   <view class="Message">
     <view class="detailMessage">
-      <text class="name">黄焖鸡米饭 </text>
+      <text class="name">9元盖饭 </text>
       <text class="monthsell">月售330</text>
-      <text class="price">¥12.43 <text>¥14.43</text></text>
+      <text class="price">¥9.00 <!--<text>¥14.43</text>--></text>
     </view>
     <view class="addReduce">
       <text class="iconfont icon-reduce" bindtap="reduce"></text>
@@ -19,12 +19,13 @@
       商品信息
     </view>
     <view>
-      配米饭一份哦
+      米饭免费加哦
     </view>
   </view>
 </view>
 
 <!--评价  -->
+<!--
 <view class="saySomething">
   <view class="sayTitle">
     <text>外卖评价（好评率100%）</text>
@@ -67,7 +68,7 @@
     </view>
   </view>
 </view>
-
+-->
 <!--加入购物车，立即购买  -->
 <view class="addBuy">
   <view class="settlement">
@@ -79,7 +80,9 @@
         </view>
         <view class="totalMoney">
           <view class="price">合计：{{totalMoney}}元</view>
+          <!--
           <view class="otherMoney">还差5元起送</view>  
+          -->
         </view>
       </view>      
       <view class="toPay" bindtap="toSubmit">
@@ -90,7 +93,7 @@
   <!-- <view class="add" bindtap="open">加入购物车</view>
   <view class="buy" bindtap="buyNow">立即购买</view> -->
 </view>
-
+<!--
 <view class="Block" wx:if="{{block}}">
   <view class="total">
     <view class="title">
@@ -113,4 +116,5 @@
       确定
     </view>
   </view>
-</view>
+</view>  
+-->

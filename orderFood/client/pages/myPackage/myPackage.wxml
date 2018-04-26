@@ -1,3 +1,4 @@
+<!--
 <view class="myPackage">
   <view class="packageList" wx:for="{{arr}}">
     <view class="top"></view>
@@ -13,3 +14,4 @@
     </view>
   </view>
 </view>
+-->

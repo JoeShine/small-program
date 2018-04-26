@@ -3,9 +3,9 @@ Page({
     num: 0,
     noAddress: false,
     arr: [
-      { id: 0, name: "张三 先生", phone: "123456789", address:"启梦创业广场1A158-159"},
-      { id: 1, name: "张三 先生", phone: "123456789", address: "启梦创业广场1A158-159" },
-      { id: 2, name: "张三 先生", phone: "123456789", address: "启梦创业广场1A158-159" },
+      { id: 0, name: "张三 先生", phone: "15103408807", address:"某公司某街15号"},
+      { id: 1, name: "李四 先生", phone: "15103408807", address: "某公司某街6号" },
+      { id: 2, name: "王五 先生", phone: "15103408807", address: "某公司某街9号" },
     ],
   },
   chooseAddress: function(e) {
