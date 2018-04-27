@@ -18,7 +18,7 @@
         预计送达<text>19:16</text>
       </view>
       -->
-      <view>商家已接单</view>
+      <view>请稍等，马上接单</view>
       <view class="iconfont icon-time"></view>
       <view class="noPay" wx:if="{{orderStatus==0}}">
         逾期未支付，订单将自动取消

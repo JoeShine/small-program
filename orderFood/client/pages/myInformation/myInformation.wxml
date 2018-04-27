@@ -11,8 +11,20 @@
       <view class='xing'>性别:
         <input placeholder-class='placeholder' placeholder='请输入性别' class="in" name='tel' value="{{userinfo.tel}}" />
       </view>
+      <!--
       <view class='xing'>部门:
         <input placeholder-class='placeholder' placeholder='请输入部门' class="in" name='tel' value="{{userinfo.tel}}" />
+      </view>
+      -->
+      <view class='xing'>
+        <view class="section__title">部门:</view>
+        <view class='form-group'>
+          <picker bindchange="bindTypeChange" value="{{indexType}}" range="{{arrayType}}">
+            <view class="picker">
+              {{arrayType[indexType]}}
+            </view>
+          </picker>
+        </view>
       </view>
       <button type="" form-type="submit" hover-class='button-hover' class='su'>保存</button>
     </form>

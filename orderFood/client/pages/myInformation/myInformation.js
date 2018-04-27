@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    orderType:0,
+    arrayType: ['企业管理部', 'XX工作部', 'XX管理部','XX资源部'],
+    indexType: 0
   },
 
   /**
@@ -15,6 +17,12 @@ Page({
   
   },
 
+  bindTypeChange: function(e){
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      indexType: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

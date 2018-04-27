@@ -70,6 +70,9 @@ Page({
     ],
     // order
     orderOk: false,
+    currentTab: 0,
+    winHeight: 700,
+    isStatus: 'allorder', //0全部，1待接单，2待用餐，3已完成
     // me
     img: ''
   },
@@ -100,12 +103,32 @@ Page({
         img: userInfo.avatarUrl
       })
     })
+  
     wx.getSystemInfo({
       success: function (res) {
         that.setData({ 
           height: (res.windowHeight*1)+'px'
         })
       }
+    });
+  },
+  //订单切换函数
+  swichNav: function (e) {
+    var that = this;
+    if (that.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      var current = e.target.dataset.current;
+      that.setData({
+        currentTab: parseInt(current),
+        isStatus: e.target.dataset.otype,
+      });
+    }
+  },
+  bindChange: function (e) {
+    var that = this;
+    that.setData({
+      currentTab: e.detail.current
     });
   },
   turnMenu: function(e) {
@@ -255,17 +278,6 @@ Page({
     var i = e.currentTarget.dataset.id;
     var arr3 = this.data.arr3;
     arr3[i].num = parseInt(arr3[i].num) + 1;
-    if (arr3[i].num==4){
-      wx.showModal({
-        title: '不满足订餐条件!!!',
-        content: '只能提前一天预订，请选择正确的订餐日期',
-      })
-    } else if (arr3[i].num == 6){
-      wx.showModal({
-        title: '不满足订餐条件!!!',
-        content: '每人每天最多预订一次午餐和晚餐',
-      })
-    }
     this.setData({
       arr3: arr3
     })
@@ -282,8 +294,20 @@ Page({
   */
   orderdelete: function(){
     wx.showModal({
-      title: '不允许！',
-      content: '只有已完成的订单才能删除',
+      title: '是否删除？',
+      content: '',
+    })
+  },
+  orderdelete1: function () {
+    wx.showModal({
+      title: '不允许删除！',
+      content: '不能取消前一天的订单',
+    })
+  },
+  orderdelete2: function () {
+    wx.showModal({
+      title: '确认删除？',
+      content: '哭，我们会尽快接单，请再耐心等待',
     })
   },
   close: function () {

@@ -48,3 +48,12 @@ page{
   top: 103rpx;
   background: #ffe400;
 }
+
+.section__title{  
+    float: left;  
+    width:20%;  
+}
+.form-group{  
+    float: right;  
+    width: 70%;  
+}
